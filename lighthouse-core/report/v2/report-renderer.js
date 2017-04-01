@@ -69,9 +69,6 @@ window.ReportRenderer = class ReportRenderer {
   renderReport(report) {
     try {
       const element = this._renderReport(report);
-      const pre = this._document.createElement('pre');
-      pre.textContent = JSON.stringify(report, null, 2);
-      element.appendChild(pre);
       return element;
     } catch (e) {
       return this._renderException(e);
