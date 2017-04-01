@@ -160,15 +160,14 @@ window.ReportRenderer = class ReportRenderer {
    * @return {Element}
    */
   _renderList(list) {
-    const element = this._createElement('div', 'lighthouse-list');
+    const element = this._createElement('details', 'lighthouse-list');
     if (list.header) {
-      const header = element.appendChild(this._createElement('div', 'lighthouse-list__header'));
-      header.appendChild(this._renderDetails(list.header));
-      header.addEventListener('click', () => items.classList.toggle('--hidden'), false);
-      element.appendChild(header);
+      const summary = this._createElement('summary', 'lighthouse-list__header');
+      summary.textContent = list.header.text;
+      element.appendChild(summary);
     }
 
-    const items = this._createElement('div', 'lighthouse-list__items --hidden');
+    const items = this._createElement('div', 'lighthouse-list__items');
     for (const item of list.items) {
       items.appendChild(this._renderDetails(item));
     }
