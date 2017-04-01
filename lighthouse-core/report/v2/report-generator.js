@@ -101,7 +101,7 @@ class ReportGeneratorV2 {
     return ReportGeneratorV2.replaceStrings(REPORT_TEMPLATE, [
       {search: '%%LIGHTHOUSE_JSON%%', replacement: sanitizedJson},
       {search: '%%LIGHTHOUSE_JAVASCRIPT%%', replacement: sanitizedJavascript},
-      {search: '%%LIGHTHOUSE_CSS%%', replacement: REPORT_CSS},
+      {search: '/*%%LIGHTHOUSE_CSS%%*/', replacement: REPORT_CSS},
     ]);
   }
 }

@@ -10,7 +10,8 @@ module.exports = {
     // 2 == error, 1 == warning, 0 == off
     "indent": [2, 2, {
       "SwitchCase": 1,
-      "VariableDeclarator": 2
+      "VariableDeclarator": 2,
+      "outerIIFEBody": 0
     }],
     "max-len": [2, 100, {
       "ignoreComments": true,
