@@ -16,6 +16,7 @@
 'use strict';
 
 /* eslint-env browser */
+/* eslint indent: ["error", 2, { "outerIIFEBody": 0 }] */
 
 (function() {
 const RATINGS = {
@@ -119,14 +120,14 @@ window.ReportRenderer = class ReportRenderer {
    */
   _renderDetails(details) {
     switch (details.type) {
-      case 'text':
-        return this._renderText(details);
-      case 'block':
-        return this._renderBlock(details);
-      case 'list':
-        return this._renderList(details);
-      default:
-        throw new Error(`Unknown type: ${details.type}`);
+    case 'text':
+      return this._renderText(details);
+    case 'block':
+      return this._renderBlock(details);
+    case 'list':
+      return this._renderList(details);
+    default:
+      throw new Error(`Unknown type: ${details.type}`);
     }
   }
 
